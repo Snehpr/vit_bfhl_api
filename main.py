@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
@@ -5,13 +6,17 @@ from typing import List
 app = FastAPI()
 
 # ----- CONFIG -----
-FULL_NAME = "john_doe"   # change this to your name in lowercase with underscore
-DOB = "17091999"         # change this to your DOB in ddmmyyyy
-EMAIL = "john@xyz.com"   # change this to your email
-ROLL_NUMBER = "ABCD123"  # change this to your roll number
+FULL_NAME = "sneh_pratap"
+DOB = "15042003"
+EMAIL = "sneh@example.com"
+ROLL_NUMBER = "22BCE2965"
 
 class InputData(BaseModel):
     data: List[str]
+
+@app.get("/")
+def read_root():
+    return {"message": "API is running. Use /bfhl POST endpoint for array processing."}
 
 @app.post("/bfhl")
 async def process_data(request: InputData):
@@ -55,3 +60,4 @@ async def process_data(request: InputData):
 
     except Exception as e:
         return {"is_success": False, "error": str(e)}
+
