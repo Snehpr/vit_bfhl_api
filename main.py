@@ -8,7 +8,7 @@ app = FastAPI()
 # ----- CONFIG -----
 FULL_NAME = "sneh_pratap"
 DOB = "15042003"
-EMAIL = "sneh@example.com"
+EMAIL = "pratapsneh.sp@gmail.com"
 ROLL_NUMBER = "22BCE2965"
 
 class InputData(BaseModel):
